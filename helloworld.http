@@ -1,0 +1,16 @@
+POST http://localhost:8080/login HTTP/1.1
+content-type: application/json
+
+{
+"userName": "rookiefly",
+"password": "123456"
+}
+
+###
+GET http://localhost:8080/guest/welcome HTTP/1.1
+
+###
+GET http://localhost:8080/user/getMessage HTTP/1.1
+Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NTIxMjQ5NjgsInVzZXJuYW1lIjoicm9va2llZmx5In0.X2gktQX8pHZbyxxPHXZfnuB31p8cqNMvpbizb58jN6Q
+
+###

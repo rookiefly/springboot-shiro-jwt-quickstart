@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rookiefly.springboot.helloworld.mapper.UserMapper">
+    <select id="getPassword" parameterType="String" resultType="String">
+        SELECT password
+        FROM t_user
+        WHERE user_name = #{username} AND ban = 0
+    </select>
+
+    <update id="updatePassword" parameterType="String">
+        UPDATE t_user
+        SET password = #{password}
+        WHERE user_name = #{username}
+    </update>
+
+    <select id="getUser" resultType="String">
+        SELECT user_name
+        FROM t_user
+    </select>
+
+    <update id="banUser" parameterType="String">
+        UPDATE t_user
+        SET ban = 1
+        WHERE user_name = #{username}  AND ban = 0
+    </update>
+
+    <select id="checkUserBanStatus" parameterType="String" resultType="int">
+        SELECT ban
+        FROM t_user
+        WHERE user_name = #{username}
+    </select>
+</mapper>
