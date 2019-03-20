@@ -12,18 +12,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @Description user角色权限controller
+ *  user角色权限controller
  */
 @RestController
 @RequestMapping("/user")
 public class UserController {
+
     private final UserMapper userMapper;
-    private final ResultMap resultMap;
 
     @Autowired
-    public UserController(UserMapper userMapper, ResultMap resultMap) {
+    public UserController(UserMapper userMapper) {
         this.userMapper = userMapper;
-        this.resultMap = resultMap;
     }
 
     /**
@@ -32,6 +31,7 @@ public class UserController {
     @GetMapping("/getMessage")
     @RequiresRoles(logical = Logical.OR, value = {"user", "admin"})
     public ResultMap getMessage() {
+        ResultMap resultMap = new ResultMap();
         return resultMap.success().code(200).message("成功获得信息！");
     }
 
@@ -39,6 +39,7 @@ public class UserController {
     @RequiresRoles(logical = Logical.OR, value = {"user", "admin"})
     public ResultMap updatePassword(String username, String oldPassword, String newPassword) {
         String dataBasePassword = userMapper.getPassword(username);
+        ResultMap resultMap = new ResultMap();
         if (dataBasePassword.equals(oldPassword)) {
             userMapper.updatePassword(username, newPassword);
         } else {
@@ -54,6 +55,7 @@ public class UserController {
     @RequiresRoles(logical = Logical.OR, value = {"user", "admin"})
     @RequiresPermissions("vip")
     public ResultMap getVipMessage() {
+        ResultMap resultMap = new ResultMap();
         return resultMap.success().code(200).message("成功获得 vip 信息！");
     }
 }

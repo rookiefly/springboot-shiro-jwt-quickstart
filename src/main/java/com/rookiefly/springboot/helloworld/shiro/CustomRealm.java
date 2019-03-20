@@ -17,7 +17,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * @Description 自定义 Realm
+ *  自定义 Realm
  */
 @Component
 public class CustomRealm extends AuthorizingRealm {

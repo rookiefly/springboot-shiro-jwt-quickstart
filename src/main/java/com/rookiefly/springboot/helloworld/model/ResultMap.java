@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import java.util.HashMap;
 
 /**
- * @Description 接口返回对象
+ *  接口返回对象
  */
 @Component
 public class ResultMap extends HashMap<String, Object> {

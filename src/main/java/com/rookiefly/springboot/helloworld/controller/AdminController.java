@@ -12,24 +12,23 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
- * @Description admin角色权限controller
+ *  admin角色权限controller
  */
 @RestController
 @RequestMapping("/admin")
 public class AdminController {
     private final UserMapper userMapper;
-    private final ResultMap resultMap;
 
     @Autowired
-    public AdminController(UserMapper userMapper, ResultMap resultMap) {
+    public AdminController(UserMapper userMapper) {
         this.userMapper = userMapper;
-        this.resultMap = resultMap;
     }
 
     @GetMapping("/getUser")
     @RequiresRoles("admin")
     public ResultMap getUser() {
         List<String> list = userMapper.getUser();
+        ResultMap resultMap = new ResultMap();
         return resultMap.success().code(200).message(list);
     }
 
@@ -40,6 +39,7 @@ public class AdminController {
     @RequiresRoles("admin")
     public ResultMap updatePassword(String username) {
         userMapper.banUser(username);
+        ResultMap resultMap = new ResultMap();
         return resultMap.success().code(200).message("成功封号！");
     }
 }

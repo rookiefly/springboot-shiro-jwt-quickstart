@@ -4,9 +4,6 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
-/**
- * Created by hzwanggaoxiang on 2017/7/13.
- */
 @Getter
 @Setter
 @RequiredArgsConstructor

@@ -9,25 +9,25 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Map;
-
+/**
+ * 用户登录
+ */
 @RestController
 public class LoginController {
+
     private final UserMapper userMapper;
-    private final ResultMap resultMap;
 
     @Autowired
-    public LoginController(UserMapper userMapper, ResultMap resultMap) {
+    public LoginController(UserMapper userMapper) {
         this.userMapper = userMapper;
-        this.resultMap = resultMap;
     }
 
     @PostMapping("/login")
     public ResultMap login(@RequestBody User user) {
         String realPassword = userMapper.getPassword(user.getUserName());
+        ResultMap resultMap = new ResultMap();
         if (realPassword == null) {
             return resultMap.fail().code(401).message("用户名错误");
         } else if (!realPassword.equals(user.getPassword())) {
@@ -39,6 +39,7 @@ public class LoginController {
 
     @RequestMapping(path = "/unauthorized/{message}")
     public ResultMap unauthorized(@PathVariable String message) {
+        ResultMap resultMap = new ResultMap();
         return resultMap.success().code(401).message(message);
     }
 }

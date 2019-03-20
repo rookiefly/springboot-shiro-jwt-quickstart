@@ -3,7 +3,7 @@ package com.rookiefly.springboot.helloworld.shiro;
 import org.apache.shiro.authc.AuthenticationToken;
 
 /**
- * @Description token
+ *  token
  */
 public class JWTToken implements AuthenticationToken {
     private String token;

@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.net.URLEncoder;
 
 /**
- * @Description preHandle->isAccessAllowed->isLoginAttempt->executeLogin
+ *  preHandle->isAccessAllowed->isLoginAttempt->executeLogin
  */
 public class JWTFilter extends BasicHttpAuthenticationFilter {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
