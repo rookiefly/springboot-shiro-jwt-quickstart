@@ -1,4 +1,4 @@
-package com.rookiefly.springboot.helloworld.shiro;
+package com.rookiefly.springboot.sam.shiro;
 
 import org.apache.shiro.authc.AuthenticationToken;
 

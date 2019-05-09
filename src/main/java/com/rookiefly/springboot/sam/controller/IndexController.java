@@ -1,4 +1,4 @@
-package com.rookiefly.springboot.helloworld.controller;
+package com.rookiefly.springboot.sam.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,7 +1,7 @@
-package com.rookiefly.springboot.helloworld.config;
+package com.rookiefly.springboot.sam.config;
 
-import com.rookiefly.springboot.helloworld.filter.JWTFilter;
-import com.rookiefly.springboot.helloworld.shiro.CustomRealm;
+import com.rookiefly.springboot.sam.filter.JWTFilter;
+import com.rookiefly.springboot.sam.shiro.CustomRealm;
 import org.apache.shiro.mgt.DefaultSessionStorageEvaluator;
 import org.apache.shiro.mgt.DefaultSubjectDAO;
 import org.apache.shiro.mgt.SecurityManager;

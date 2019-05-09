@@ -1,4 +1,4 @@
-package com.rookiefly.springboot.helloworld.config;
+package com.rookiefly.springboot.sam.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -24,7 +24,7 @@ public class Swagger2Config {
                 .enable(swaggerShow)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.rookiefly.springboot.helloworld.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.rookiefly.springboot.sam.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }

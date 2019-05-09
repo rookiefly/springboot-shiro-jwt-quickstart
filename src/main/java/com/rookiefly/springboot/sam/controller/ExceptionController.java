@@ -1,6 +1,6 @@
-package com.rookiefly.springboot.helloworld.controller;
+package com.rookiefly.springboot.sam.controller;
 
-import com.rookiefly.springboot.helloworld.model.ResultMap;
+import com.rookiefly.springboot.sam.model.ResultMap;
 import org.apache.shiro.ShiroException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;

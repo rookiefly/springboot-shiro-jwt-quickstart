@@ -1,7 +1,7 @@
-package com.rookiefly.springboot.helloworld.controller;
+package com.rookiefly.springboot.sam.controller;
 
-import com.rookiefly.springboot.helloworld.mapper.UserMapper;
-import com.rookiefly.springboot.helloworld.model.ResultMap;
+import com.rookiefly.springboot.sam.mapper.UserMapper;
+import com.rookiefly.springboot.sam.model.ResultMap;
 import org.apache.shiro.authz.annotation.Logical;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.shiro.authz.annotation.RequiresRoles;

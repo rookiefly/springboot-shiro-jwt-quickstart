@@ -1,12 +1,12 @@
-package com.rookiefly.springboot.helloworld;
+package com.rookiefly.springboot.sam;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Application {
+public class SamApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(SamApplication.class, args);
     }
 }

@@ -1,4 +1,4 @@
-package com.rookiefly.springboot.helloworld.mapper;
+package com.rookiefly.springboot.sam.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 

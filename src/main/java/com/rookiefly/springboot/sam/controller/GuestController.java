@@ -1,7 +1,6 @@
-package com.rookiefly.springboot.helloworld.controller;
+package com.rookiefly.springboot.sam.controller;
 
-import com.rookiefly.springboot.helloworld.model.ResultMap;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.rookiefly.springboot.sam.model.ResultMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

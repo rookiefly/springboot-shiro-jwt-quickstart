@@ -1,4 +1,4 @@
-package com.rookiefly.springboot.helloworld.util;
+package com.rookiefly.springboot.sam.util;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;

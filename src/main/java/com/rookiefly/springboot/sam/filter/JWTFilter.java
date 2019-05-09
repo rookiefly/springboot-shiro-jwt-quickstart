@@ -1,6 +1,6 @@
-package com.rookiefly.springboot.helloworld.filter;
+package com.rookiefly.springboot.sam.filter;
 
-import com.rookiefly.springboot.helloworld.shiro.JWTToken;
+import com.rookiefly.springboot.sam.shiro.JWTToken;
 import org.apache.shiro.authz.UnauthorizedException;
 import org.apache.shiro.web.filter.authc.BasicHttpAuthenticationFilter;
 import org.slf4j.Logger;

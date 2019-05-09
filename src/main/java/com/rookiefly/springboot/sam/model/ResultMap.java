@@ -1,4 +1,4 @@
-package com.rookiefly.springboot.helloworld.model;
+package com.rookiefly.springboot.sam.model;
 
 import org.springframework.stereotype.Component;
 

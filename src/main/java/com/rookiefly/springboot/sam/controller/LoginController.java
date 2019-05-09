@@ -1,9 +1,9 @@
-package com.rookiefly.springboot.helloworld.controller;
+package com.rookiefly.springboot.sam.controller;
 
-import com.rookiefly.springboot.helloworld.mapper.UserMapper;
-import com.rookiefly.springboot.helloworld.model.ResultMap;
-import com.rookiefly.springboot.helloworld.model.User;
-import com.rookiefly.springboot.helloworld.util.JWTUtil;
+import com.rookiefly.springboot.sam.mapper.UserMapper;
+import com.rookiefly.springboot.sam.model.ResultMap;
+import com.rookiefly.springboot.sam.model.User;
+import com.rookiefly.springboot.sam.util.JWTUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
