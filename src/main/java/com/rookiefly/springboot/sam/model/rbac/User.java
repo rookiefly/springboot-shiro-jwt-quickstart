@@ -1,4 +1,4 @@
-package com.rookiefly.springboot.sam.model;
+package com.rookiefly.springboot.sam.model.rbac;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

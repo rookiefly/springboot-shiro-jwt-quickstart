@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rookiefly.springboot.sam.mapper.dict.DictMapper">
+
+    <resultMap id="dictionaryResultMap" type="Dictionary">
+        <result column="key" javaType="java.lang.String" />
+    </resultMap>
+
+    <select id="getDictionaryById" parameterType="Integer" resultMap="dictionaryResultMap">
+        SELECT *
+        FROM dictionary
+        WHERE id = #{id}
+    </select>
+
+</mapper>

@@ -1,6 +1,6 @@
 package com.rookiefly.springboot.sam.shiro;
 
-import com.rookiefly.springboot.sam.mapper.UserMapper;
+import com.rookiefly.springboot.sam.mapper.rbac.UserMapper;
 import com.rookiefly.springboot.sam.util.JWTUtil;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;

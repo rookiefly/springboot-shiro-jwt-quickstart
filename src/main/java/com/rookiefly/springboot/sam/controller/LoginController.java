@@ -1,8 +1,8 @@
 package com.rookiefly.springboot.sam.controller;
 
-import com.rookiefly.springboot.sam.mapper.UserMapper;
+import com.rookiefly.springboot.sam.mapper.rbac.UserMapper;
 import com.rookiefly.springboot.sam.model.ResultMap;
-import com.rookiefly.springboot.sam.model.User;
+import com.rookiefly.springboot.sam.model.rbac.User;
 import com.rookiefly.springboot.sam.util.JWTUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;

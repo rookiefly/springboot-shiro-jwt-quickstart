@@ -1,8 +1,8 @@
 package com.rookiefly.springboot.sam.controller;
 
 import com.rookiefly.springboot.sam.model.CommonResponse;
-import com.rookiefly.springboot.sam.model.Dictionary;
-import com.rookiefly.springboot.sam.model.DictionaryCategory;
+import com.rookiefly.springboot.sam.model.dict.Dictionary;
+import com.rookiefly.springboot.sam.model.dict.DictionaryCategory;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,4 +1,4 @@
-package com.rookiefly.springboot.sam.model;
+package com.rookiefly.springboot.sam.model.dict;
 
 import lombok.Getter;
 import lombok.Setter;

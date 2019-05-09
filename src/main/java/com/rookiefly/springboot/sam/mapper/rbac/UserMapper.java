@@ -1,4 +1,4 @@
-package com.rookiefly.springboot.sam.mapper;
+package com.rookiefly.springboot.sam.mapper.rbac;
 
 import org.apache.ibatis.annotations.Mapper;
 
