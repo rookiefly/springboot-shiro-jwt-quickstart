@@ -3,13 +3,28 @@
 <mapper namespace="com.rookiefly.springboot.sam.mapper.dict.DictMapper">
 
     <resultMap id="dictionaryResultMap" type="Dictionary">
-        <result column="key" javaType="java.lang.String" />
+        <id property="id" column="id" javaType="java.lang.Long" />
+        <result property="key" column="key" javaType="java.lang.String" />
+        <result property="keyName" column="key_name" javaType="java.lang.String" />
+        <result property="valueName" column="value_name" javaType="java.lang.String" />
+        <result property="value" column="value" javaType="java.lang.String" />
+        <result property="dictionaryCategoryId" column="dictionary_category_id" javaType="java.lang.Long" />
+        <result property="sort" column="sort" javaType="java.lang.Long" />
+        <result property="remark" column="remark" javaType="java.lang.String" />
+        <result property="valueSlug" column="value_slug" javaType="java.lang.String" />
+        <result property="editable" column="editable" javaType="java.lang.Integer" />
     </resultMap>
 
-    <select id="getDictionaryById" parameterType="Integer" resultMap="dictionaryResultMap">
+    <select id="queryDictionaryById" parameterType="java.lang.Long" resultMap="dictionaryResultMap">
         SELECT *
         FROM dictionary
         WHERE id = #{id}
+    </select>
+
+    <select id="queryDictionaryByCategoryId" parameterType="java.lang.Long" resultMap="dictionaryResultMap">
+        SELECT *
+        FROM dictionary
+        WHERE dictionary_category_id = #{categoryId}
     </select>
 
 </mapper>
