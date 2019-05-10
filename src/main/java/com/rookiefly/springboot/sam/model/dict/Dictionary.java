@@ -13,34 +13,34 @@ public class Dictionary implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
-     * id
+     * 字典编码
      */
-    private Long id;
+    private Long code;
 
     /**
-     * 字典键
+     * 字典标签
      */
-    private String key;
+    private String label;
 
     /**
-     * 字典键名
-     */
-    private String keyName;
-
-    /**
-     * 字典值名
-     */
-    private String valueName;
-
-    /**
-     * 字典值别名
-     */
-    private String valueSlug;
-
-    /**
-     * 字典值
+     * 字典键值
      */
     private String value;
+
+    /**
+     * 字典类型
+     */
+    private String type;
+
+    /**
+     * 状态（0正常 1停用）
+     */
+    private String status;
+
+    /**
+     * 是否默认（Y是 N否）
+     */
+    private String isDefault;
 
     /**
      * 是否可编辑
@@ -48,19 +48,19 @@ public class Dictionary implements Serializable {
     private Integer editable;
 
     /**
-     * 字典分类 id
+     * 字典排序
      */
-    private Long dictionaryCategoryId;
-
-    /**
-     * 排序
-     */
-    private Long sort;
+    private Integer sort;
 
     /**
      * 备注
      */
     private String remark;
+
+    /**
+     * 更新操作者
+     */
+    private String updateBy;
 
     /**
      * 更新时间

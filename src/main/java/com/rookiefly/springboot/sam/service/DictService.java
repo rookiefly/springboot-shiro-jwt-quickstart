@@ -6,5 +6,7 @@ import java.util.List;
 
 public interface DictService {
 
-    List<Dictionary> queryDictionaryByCategoryId(Long categoryId);
+    Dictionary queryDictionaryByCode(Long code);
+
+    List<Dictionary> queryDictionaryByType(String type);
 }

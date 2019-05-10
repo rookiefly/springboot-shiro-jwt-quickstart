@@ -9,17 +9,17 @@ import java.util.List;
 public interface DictMapper {
 
     /**
-     * id查询字典
-     * @param id
+     * code查询字典
+     * @param code
      * @return
      */
-    Dictionary queryDictionaryById(Long id);
+    Dictionary queryDictionaryByCode(Long code);
 
     /**
      * 分类id查询字典列表
-     * @param categoryId
+     * @param type
      * @return
      */
-    List<Dictionary> queryDictionaryByCategoryId(Long categoryId);
+    List<Dictionary> queryDictionaryByType(String type);
 
 }

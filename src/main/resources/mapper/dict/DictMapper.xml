@@ -3,28 +3,29 @@
 <mapper namespace="com.rookiefly.springboot.sam.mapper.dict.DictMapper">
 
     <resultMap id="dictionaryResultMap" type="Dictionary">
-        <id property="id" column="id" javaType="java.lang.Long" />
-        <result property="key" column="key" javaType="java.lang.String" />
-        <result property="keyName" column="key_name" javaType="java.lang.String" />
-        <result property="valueName" column="value_name" javaType="java.lang.String" />
-        <result property="value" column="value" javaType="java.lang.String" />
-        <result property="dictionaryCategoryId" column="dictionary_category_id" javaType="java.lang.Long" />
-        <result property="sort" column="sort" javaType="java.lang.Long" />
+        <id property="code" column="dict_code" javaType="java.lang.Long" />
+        <result property="label" column="dict_label" javaType="java.lang.String" />
+        <result property="type" column="dict_type" javaType="java.lang.String" />
+        <result property="value" column="dict_value" javaType="java.lang.String" />
+        <result property="sort" column="dict_sort" javaType="java.lang.Integer" />
         <result property="remark" column="remark" javaType="java.lang.String" />
-        <result property="valueSlug" column="value_slug" javaType="java.lang.String" />
-        <result property="editable" column="editable" javaType="java.lang.Integer" />
+        <result property="isDefault" column="is_default" javaType="java.lang.String" />
+        <result property="status" column="status" javaType="java.lang.String" />
+        <result property="updateBy" column="update_by" javaType="java.lang.String" />
+        <result property="gmtCreated" column="create_time" javaType="java.util.Date" />
+        <result property="gmtModified" column="update_time" javaType="java.util.Date" />
     </resultMap>
 
-    <select id="queryDictionaryById" parameterType="java.lang.Long" resultMap="dictionaryResultMap">
+    <select id="queryDictionaryByType" parameterType="java.lang.String" resultMap="dictionaryResultMap">
         SELECT *
-        FROM dictionary
-        WHERE id = #{id}
+        FROM sys_dict_data
+        WHERE dict_type = #{type}
     </select>
 
-    <select id="queryDictionaryByCategoryId" parameterType="java.lang.Long" resultMap="dictionaryResultMap">
+    <select id="queryDictionaryByCode" parameterType="java.lang.Long" resultMap="dictionaryResultMap">
         SELECT *
-        FROM dictionary
-        WHERE dictionary_category_id = #{categoryId}
+        FROM sys_dict_data
+        WHERE dict_code = #{code}
     </select>
 
 </mapper>

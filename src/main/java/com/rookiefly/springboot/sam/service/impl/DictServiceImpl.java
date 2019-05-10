@@ -16,8 +16,13 @@ public class DictServiceImpl implements DictService {
     private DictMapper dictMapper;
 
     @Override
-    @Cacheable(value = "dictCache", key = "targetClass + methodName + #categoryId")
-    public List<Dictionary> queryDictionaryByCategoryId(Long categoryId) {
-        return dictMapper.queryDictionaryByCategoryId(categoryId);
+    @Cacheable(value = "dictCache", key = "targetClass + methodName + #code")
+    public Dictionary queryDictionaryByCode(Long code) {
+        return dictMapper.queryDictionaryByCode(code);
+    }
+
+    @Override
+    public List<Dictionary> queryDictionaryByType(String type) {
+        return dictMapper.queryDictionaryByType(type);
     }
 }
