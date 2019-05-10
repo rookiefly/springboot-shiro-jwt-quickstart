@@ -1,14 +1,14 @@
 package com.rookiefly.springboot.sam.controller;
 
-import com.rookiefly.springboot.sam.mapper.rbac.UserMapper;
 import com.rookiefly.springboot.sam.model.ResultMap;
 import com.rookiefly.springboot.sam.model.rbac.User;
+import com.rookiefly.springboot.sam.service.UserService;
 import com.rookiefly.springboot.sam.util.JWTUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -17,16 +17,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class LoginController {
 
-    private final UserMapper userMapper;
-
     @Autowired
-    public LoginController(UserMapper userMapper) {
-        this.userMapper = userMapper;
-    }
+    private UserService userService;
 
     @PostMapping("/login")
     public ResultMap login(@RequestBody User user) {
-        String realPassword = userMapper.getPassword(user.getUserName());
+        String realPassword = userService.queryPasswordByUserName(user.getUserName());
         ResultMap resultMap = new ResultMap();
         if (realPassword == null) {
             return resultMap.fail().code(401).message("用户名错误");
@@ -37,7 +33,7 @@ public class LoginController {
         }
     }
 
-    @RequestMapping(path = "/unauthorized/{message}")
+    @GetMapping(path = "/unauthorized/{message}")
     public ResultMap unauthorized(@PathVariable String message) {
         ResultMap resultMap = new ResultMap();
         return resultMap.success().code(401).message(message);

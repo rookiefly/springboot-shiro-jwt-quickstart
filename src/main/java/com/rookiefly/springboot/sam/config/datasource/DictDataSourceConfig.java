@@ -1,4 +1,4 @@
-package com.rookiefly.springboot.sam.config;
+package com.rookiefly.springboot.sam.config.datasource;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
