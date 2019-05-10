@@ -22,6 +22,7 @@ public class DictServiceImpl implements DictService {
     }
 
     @Override
+    @Cacheable(value = "dictCache", key = "targetClass + methodName + #type")
     public List<Dictionary> queryDictionaryByType(String type) {
         return dictMapper.queryDictionaryByType(type);
     }
