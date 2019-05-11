@@ -1,12 +1,12 @@
 package com.rookiefly.springboot.sam.config.datasource;
 
+import com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceBuilder;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
@@ -25,9 +25,9 @@ public class RBACSourceDictConfig {
     static final String TYPE_ALIASES_PACKAGE = "com.rookiefly.springboot.sam.model.rbac";
 
     @Bean(name = "rbacDataSource")
-    @ConfigurationProperties(prefix = "spring.datasource.rbac")
+    @ConfigurationProperties(prefix = "spring.datasource.druid.rbac")
     public DataSource dataSourceRBAC() {
-        return DataSourceBuilder.create().build();
+        return DruidDataSourceBuilder.create().build();
     }
 
 
