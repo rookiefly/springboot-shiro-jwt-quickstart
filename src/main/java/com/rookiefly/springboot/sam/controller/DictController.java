@@ -1,7 +1,9 @@
 package com.rookiefly.springboot.sam.controller;
 
-import com.rookiefly.springboot.sam.vo.CommonResponse;
 import com.rookiefly.springboot.sam.service.DictService;
+import com.rookiefly.springboot.sam.vo.CommonResponse;
+import org.apache.shiro.authz.annotation.Logical;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,6 +20,7 @@ public class DictController {
     private DictService dictService;
 
     @GetMapping("/type/{type}")
+    @RequiresRoles(logical = Logical.OR, value = {"user", "admin"})
     public CommonResponse queryDictionaryListByType(@PathVariable("type") String type) {
         CommonResponse successResponse = CommonResponse.newSuccessResponse();
         HashMap<Object, Object> data = new HashMap<>();
@@ -27,6 +30,7 @@ public class DictController {
     }
 
     @GetMapping("/{code}")
+    @RequiresRoles(logical = Logical.OR, value = {"user", "admin"})
     public CommonResponse queryDictionaryListByCategoryId(@PathVariable("code") Long code) {
         CommonResponse successResponse = CommonResponse.newSuccessResponse();
         HashMap<Object, Object> data = new HashMap<>();

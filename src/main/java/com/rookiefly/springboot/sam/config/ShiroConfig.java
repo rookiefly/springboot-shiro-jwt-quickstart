@@ -24,20 +24,19 @@ public class ShiroConfig {
     }
 
     @Bean
-    public ShiroFilterFactoryBean shiroFilterFactoryBean(SecurityManager securityManager, JWTFilter jwtFilter) {
+    public ShiroFilterFactoryBean shiroFilterFactoryBean(SecurityManager securityManager) {
 
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
-        // 添加自己的过滤器并且取名为jwt
+        //添加自己的过滤器并且取名为jwt
         Map<String, Filter> filterMap = new HashMap<>();
         //设置我们自定义的JWT过滤器
-        filterMap.put("jwt", jwtFilter);
+        filterMap.put("jwt", jwtTokenAuthFilter());
         shiroFilterFactoryBean.setFilters(filterMap);
-
         //必须设置 SecurityManager
         shiroFilterFactoryBean.setSecurityManager(securityManager);
-        // setLoginUrl 如果不设置值，默认会自动寻找Web工程根目录下的"/login.jsp"页面 或 "/login" 映射
+        //setLoginUrl 如果不设置值，默认会自动寻找Web工程根目录下的"/login.jsp"页面 或 "/login" 映射
         shiroFilterFactoryBean.setLoginUrl("/login");
-        // 设置无权限时跳转的 url;
+        //设置无权限时跳转的 url;
         shiroFilterFactoryBean.setUnauthorizedUrl("/unauthorized/无权限");
         return shiroFilterFactoryBean;
     }

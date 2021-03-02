@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- *  user角色权限controller
+ * user角色权限controller
  */
 @RestController
 @RequestMapping("/user")

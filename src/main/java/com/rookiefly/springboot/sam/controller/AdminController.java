@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
- *  admin角色权限controller
+ * admin角色权限controller
  */
 @RestController
 @RequestMapping("/admin")

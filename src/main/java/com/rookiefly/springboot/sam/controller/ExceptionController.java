@@ -9,19 +9,17 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- *  异常处理
+ * 异常处理
  */
 @RestControllerAdvice
 public class ExceptionController {
 
-    // 捕捉shiro的异常
     @ExceptionHandler(ShiroException.class)
     public ResultMap handle401() {
         ResultMap resultMap = new ResultMap();
         return resultMap.fail().code(401).message("您没有权限访问！");
     }
 
-    // 捕捉其他所有异常
     @ExceptionHandler(Exception.class)
     public ResultMap globalException(HttpServletRequest request, Throwable ex) {
         ResultMap resultMap = new ResultMap();
