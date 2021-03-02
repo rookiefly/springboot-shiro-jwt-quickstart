@@ -9,7 +9,7 @@ import com.auth0.jwt.interfaces.DecodedJWT;
 import java.util.Date;
 
 /**
- *  JWT 工具类
+ * JWT 工具类
  */
 public class JWTUtil {
     // 过期时间 24 小时

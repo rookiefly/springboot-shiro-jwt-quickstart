@@ -1,0 +1,33 @@
+logging:
+  file:
+    name: log/log.log
+  level:
+    com.rookiefly.springboot.sam.mapper: debug
+    org.springframework.web: info
+    root: info
+management:
+  endpoints:
+    web:
+      exposure:
+        exclude: shutdown
+        include: '*'
+server:
+  port: 8080
+spring:
+  application:
+    name: springboot-sam-web
+  cache:
+    cache-names: rbacCache,dictCache
+    caffeine:
+      spec: maximumSize=500,expireAfterAccess=600s
+  profiles:
+    active: dev
+  resources:
+    add-mappings: true
+  thymeleaf:
+    prefix: classpath:/templates/
+swagger:
+  show: true
+mybatis:
+  type-aliases-package: com.rookiefly.springboot.sam.model
+  mapperLocations: classpath:mapper/**/*.xml

@@ -1,7 +1,7 @@
 package com.rookiefly.springboot.sam.controller;
 
 import com.rookiefly.springboot.sam.mapper.rbac.UserMapper;
-import com.rookiefly.springboot.sam.model.ResultMap;
+import com.rookiefly.springboot.sam.vo.ResultMap;
 import org.apache.shiro.authz.annotation.Logical;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.shiro.authz.annotation.RequiresRoles;

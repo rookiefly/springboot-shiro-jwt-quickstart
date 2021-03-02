@@ -1,6 +1,6 @@
 package com.rookiefly.springboot.sam.controller;
 
-import com.rookiefly.springboot.sam.model.ResultMap;
+import com.rookiefly.springboot.sam.vo.ResultMap;
 import com.rookiefly.springboot.sam.model.rbac.User;
 import com.rookiefly.springboot.sam.service.UserService;
 import com.rookiefly.springboot.sam.util.JWTUtil;

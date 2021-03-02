@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    hikari:
+      connectionTimeout: 30000
+      idleTimeout: 30000
+      maxLifetime: 2000000
+      maximumPoolSize: 20
+      minimumIdle: 5
+      poolName: dictHikariCP
+    driverClassName: org.h2.Driver
+    password: root
+    username: root
+    schema: classpath:sql/schema.sql
+    data: classpath:sql/data.sql
+    type: com.zaxxer.hikari.HikariDataSource
+    jdbcUrl: jdbc:h2:mem:rbac;MODE=MySQL
+  batch:
+    initialize-schema: always
+  h2:
+    console:
+      enabled: true
+      path: /h2-console

@@ -19,7 +19,7 @@ import java.util.Set;
 /**
  *  自定义 Realm
  */
-@Component
+@Component("authorizer")
 public class CustomRealm extends AuthorizingRealm {
 
     private final UserMapper userMapper;

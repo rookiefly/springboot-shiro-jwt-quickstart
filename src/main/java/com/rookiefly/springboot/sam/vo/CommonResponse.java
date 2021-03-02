@@ -1,4 +1,4 @@
-package com.rookiefly.springboot.sam.model;
+package com.rookiefly.springboot.sam.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,6 +1,6 @@
 package com.rookiefly.springboot.sam.controller;
 
-import com.rookiefly.springboot.sam.model.CommonResponse;
+import com.rookiefly.springboot.sam.vo.CommonResponse;
 import com.rookiefly.springboot.sam.service.DictService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
