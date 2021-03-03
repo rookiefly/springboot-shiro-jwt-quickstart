@@ -1,7 +1,7 @@
 package com.rookiefly.springboot.sam.controller;
 
+import com.rookiefly.springboot.sam.common.Result;
 import com.rookiefly.springboot.sam.mapper.rbac.UserMapper;
-import com.rookiefly.springboot.sam.vo.ResultMap;
 import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,12 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-/**
- * admin角色权限controller
- */
 @RestController
 @RequestMapping("/admin")
 public class AdminController {
+
     private final UserMapper userMapper;
 
     @Autowired
@@ -26,10 +24,9 @@ public class AdminController {
 
     @GetMapping("/getUser")
     @RequiresRoles("admin")
-    public ResultMap getUser() {
+    public Result getUser() {
         List<String> list = userMapper.getUser();
-        ResultMap resultMap = new ResultMap();
-        return resultMap.success().code(200).message(list);
+        return Result.success(list);
     }
 
     /**
@@ -37,9 +34,8 @@ public class AdminController {
      */
     @PostMapping("/banUser")
     @RequiresRoles("admin")
-    public ResultMap updatePassword(String username) {
+    public Result updatePassword(String username) {
         userMapper.banUser(username);
-        ResultMap resultMap = new ResultMap();
-        return resultMap.success().code(200).message("成功封号！");
+        return Result.success("OK");
     }
 }

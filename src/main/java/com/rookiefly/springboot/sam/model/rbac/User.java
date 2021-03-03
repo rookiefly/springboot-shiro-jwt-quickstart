@@ -1,22 +1,31 @@
 package com.rookiefly.springboot.sam.model.rbac;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
-@RequiredArgsConstructor
+import java.util.List;
+
+@Data
 public class User {
 
-    private Integer id;
+    private Integer userId;
 
-    private String userName;
+    private String username;
 
     private String password;
 
-    public User(Integer id, String userName) {
-        this.id = id;
-        this.userName = userName;
+    private List<Role> roleList;
+
+    /**
+     * 用户状态，1-禁用 0-正常
+     */
+    private Integer status;
+
+    public User() {
+    }
+
+    public User(String username, String password, List<Role> roleList) {
+        this.username = username;
+        this.password = password;
+        this.roleList = roleList;
     }
 }

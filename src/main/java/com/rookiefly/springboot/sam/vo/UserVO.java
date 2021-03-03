@@ -1,22 +1,26 @@
 package com.rookiefly.springboot.sam.vo;
 
+import com.rookiefly.springboot.sam.model.rbac.Role;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
 
 @Getter
 @Setter
-@RequiredArgsConstructor
 public class UserVO {
 
-    private Integer id;
+    private Integer userId;
 
-    private String userName;
+    private String username;
 
     private String password;
 
-    public UserVO(Integer id, String userName) {
-        this.id = id;
-        this.userName = userName;
-    }
+    /**
+     * 用户状态，1-禁用 0-正常
+     */
+    private Integer status;
+
+    private List<Role> roleList;
+
 }

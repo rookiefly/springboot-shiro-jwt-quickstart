@@ -1,11 +1,21 @@
 package com.rookiefly.springboot.sam.mapper.rbac;
 
+import com.rookiefly.springboot.sam.model.rbac.User;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
 @Mapper
 public interface UserMapper {
+
+    /**
+     * 获得密码
+     *
+     * @param username 用户名
+     */
+    User queryUser(String username);
+
     /**
      * 获得密码
      *
@@ -16,7 +26,7 @@ public interface UserMapper {
     /**
      * 修改密码
      */
-    void updatePassword(String username, String newPassword);
+    Integer updatePassword(@Param("username") String username, @Param("newPassword") String newPassword, @Param("oldPassword") String oldPassword);
 
     /**
      * 获得存在的用户
